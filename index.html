@@ -29,8 +29,8 @@
         <!--nav-->
         <nav class="amber">
             <div class="nav-wrapper">
-                <a href="#" class="brand-logo" style="font-family: Impact">&nbsp;Swami Syntex</a>
-                <a href="side-nav" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+                <a href="#" class="brand-logo" style="font-family: Impact">&nbsp;Swamy Syntex</a>
+                <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
                     <li><a href="#">Clients</a></li>
                     <li><a href="#">Infrastructure</a></li>
@@ -90,7 +90,14 @@
         <script>
             $(document).ready(function(){
                 $('.collapsible').collapsible();
-                $(".button-collapse").sideNav();
+                $('.button-collapse').sideNav({
+      menuWidth: 300, // Default is 300
+      edge: 'right', // Choose the horizontal origin
+      closeOnClick: true, // Closes side-nav on <a> clicks, useful for Angular/Meteor
+      draggable: true, // Choose whether you can drag to open on touch screens,
+      onOpen: function(el) { /* Do Stuff* / }, // A function to be called when sideNav is opened
+      onClose: function(el) { /* Do Stuff* / }, // A function to be called when sideNav is closed
+    }
             });
 
         </script>
